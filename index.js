@@ -1,10 +1,10 @@
 const URL = "https://api.pexels.com/v1/search?query=";
 
-const sayHi = function (name) {
-  console.log("ciao " + name);
-};
-sayHi("andrea");
-sayHi("stefano");
+// const sayHi = function (name) {
+//   console.log("ciao " + name);
+// };
+// sayHi("andrea");
+// sayHi("stefano");
 // genera card da API principale
 
 const getPhotoMain = (query) => {
@@ -24,15 +24,15 @@ const getPhotoMain = (query) => {
 
       data.photos.forEach((photo) => {
         const col = document.createElement("div");
-        col.className = "col col-md-4 col-xl-2";
+        col.className = "col col-md-4 col-xl-3";
 
         const card = document.createElement("div");
-        card.className = "card  mb-4 shadow-sm ";
+        card.className = "card mb-4 shadow-sm ";
 
         card.innerHTML = `
                 
                   
-                    <img
+                    <img class="img-fluid object-fit-cover" style="height: 200px;" 
                       src="${photo.src.medium}"
                     />
                     <div class="card-body">
@@ -59,7 +59,7 @@ const getPhotoMain = (query) => {
                             Edit
                           </button>
                         </div>
-                        <small class="text-muted">9 mins</small>
+                        <small class="text-muted">${photo.id}</small>
                       </div>
                     </div>
                   
