@@ -52,19 +52,19 @@ const getPhotoMain = (query) => {
                           >
                             View
                           </button>
-                          <button
+                          <button id="hideBtn"
                             type="button"
                             class="btn btn-sm btn-outline-secondary"
                           >
-                            Edit
-                          </button>
-                        </div>
-                        <small class="text-muted">${photo.id}</small>
-                      </div>
-                    </div>
-                  
-                
-                `;
+                            Elimina
+                            </button>
+                            </div>
+                            <small class="text-muted">${photo.id}</small>
+                            </div>
+                            </div>
+                            
+                            
+                            `;
         col.appendChild(card);
         row.appendChild(col);
       });
@@ -77,3 +77,11 @@ const getPhotoMain = (query) => {
 
 document.getElementById("loadMainPhoto").addEventListener("click", () => getPhotoMain("hamsters"));
 document.getElementById("loadSecondPhoto").addEventListener("click", () => getPhotoMain("tigers"));
+document.getElementById("button-addon1").addEventListener("click", () => {
+  const inputValue = document.getElementById("inputId").value;
+  getPhotoMain(inputValue);
+});
+
+// document.getElementById("hideBtn").addEventListener("click", () => {
+//   col.classList.add("d-none");
+// });
