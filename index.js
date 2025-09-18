@@ -52,9 +52,9 @@ const getPhotoMain = (query) => {
                           >
                             View
                           </button>
-                          <button id="hideBtn"
+                          <button
                             type="button"
-                            class="btn btn-sm btn-outline-secondary"
+                            class="hideBtn btn btn-sm btn-outline-secondary"
                           >
                             Elimina
                             </button>
@@ -67,6 +67,16 @@ const getPhotoMain = (query) => {
                             `;
         col.appendChild(card);
         row.appendChild(col);
+
+        const hideButtons = document.querySelectorAll(".hideBtn");
+        hideButtons.forEach((btn) => {
+          btn.addEventListener("click", (event) => {
+            const col = event.target.closest(".col");
+            if (col) {
+              col.classList.add("d-none");
+            }
+          });
+        });
       });
     })
 
@@ -81,7 +91,3 @@ document.getElementById("button-addon1").addEventListener("click", () => {
   const inputValue = document.getElementById("inputId").value;
   getPhotoMain(inputValue);
 });
-
-// document.getElementById("hideBtn").addEventListener("click", () => {
-//   col.classList.add("d-none");
-// });
