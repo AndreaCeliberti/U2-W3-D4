@@ -56,7 +56,7 @@ const getPhotoMain = (query) => {
                             type="button"
                             class="hideBtn btn btn-sm btn-outline-secondary"
                           >
-                            Elimina
+                            Hide
                             </button>
                             </div>
                             <small class="text-muted">${photo.id}</small>
